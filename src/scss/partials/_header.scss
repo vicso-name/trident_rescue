@@ -1,0 +1,98 @@
+.site-header{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    .site-header-conten{
+        display: flex;
+        justify-content: space-between;
+        
+        .header-log-popup{
+            display: flex;
+            align-items: center;
+            column-gap: 95px;
+            .header-logo{
+                img{
+                    width: 155px;
+                }
+                svg{
+                    width: 155px;
+                }
+            }
+            .header-popup{
+                p{
+                    margin: 0;
+                    font-family: "Inter", sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    text-decoration: underline;
+                    color: #1E1E1E;
+                    transition: all .5s ease;
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .header-language-dotan{
+            display: flex;
+            .header-lang-switcher{
+
+            }
+            .header-buttons{
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                .donate-button{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 62px;
+                    line-height: 62px;
+                    border-radius: 60px;
+                    min-width: 155px;
+                    span{
+                        position: relative;
+                        font-family: 'Inter', sans-serif;
+                        font-weight: 600;
+                        font-size: 16px;
+                        text-align: center;
+                        color: #1E1E1E;
+                        margin-left: -15px;
+                        &::before{
+                            content: "";
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='20' viewBox='0 0 24 20' fill='none'%3E%3Cpath d='M16.2426 6.75729L7.75736 15.2426M16.2426 6.75729V15.2426M16.2426 6.75729H7.75736' stroke='%231E1E1E' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                            width: 24px;
+                            height: 20px;
+                            position: absolute;
+                            right: -30px;
+                            bottom: 21px;
+                        }
+                    }
+                }
+                .email-icon{
+                    width: 62px;
+                    height: 62px;
+                    border-radius: 100%;
+                    border: 1px solid #1E1E1E;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .5s ease;
+                    cursor: pointer;
+                    img{
+                        width: 26px;
+                        height: 26px;
+                    }
+                    svg{
+                        width: 26px;
+                        height: 26px;
+                    }
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+}

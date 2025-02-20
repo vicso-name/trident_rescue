@@ -165,7 +165,7 @@ function stylesSections() {
 
 function browsersyncServe(done) {
   browserSync.init({
-    proxy: "http://localhost/wordpress/",
+    proxy: "http://tridentrescue.test/",
     notify: false,
     open: false
   });

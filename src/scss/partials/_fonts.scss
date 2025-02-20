@@ -1,0 +1,41 @@
+/*** Inter ***/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*** NT Somic ***/
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../fonts/nt-somic/NTSomic-Bold.woff2') format('woff2'),
+        url('../../fonts/nt-somic/NTSomic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../fonts/nt-somic/NTSomic-Medium.woff2') format('woff2'),
+        url('../../fonts/nt-somic/NTSomic-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../fonts/nt-somic/NTSomic-Semibold.woff2') format('woff2'),
+        url('../../fonts/nt-somic/NTSomic-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../fonts/nt-somic/NTSomic-Regular.woff2') format('woff2'),
+        url('../../fonts/nt-somic/NTSomic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,310 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  max-height: 800px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.hero__content .hero__title .hero__heading {
+  font-family: "NT Somic";
+  font-weight: bold;
+  text-align: right;
+  font-size: 110px;
+  line-height: 110px;
+  color: #1E1E1E;
+}
+.hero__content .hero__title .hero__heading span:nth-child(1) {
+  position: relative;
+  right: 370px;
+}
+.hero__content .hero__title .hero__heading span:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml,%3Csvg width='269' height='148' viewBox='0 0 269 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 46.2203C2 46.2203 140.254 -35.5966 162.768 23.3484C179.838 68.0394 84.8675 92.8411 109.675 133.73C137.129 178.983 267 84.4952 267 84.4952' stroke='%23D7D3CB' stroke-width='2' stroke-linecap='round' stroke-dasharray='6 6'/%3E%3Cellipse cx='146.167' cy='71.4448' rx='38.5' ry='23.7468' transform='rotate(-156.305 146.167 71.4448)' fill='%23EBEAE8'/%3E%3Cpath d='M161.065 84.1671C158.685 85.4425 156.753 84.6335 155.531 83.4749C154.419 82.4198 152.979 81.7637 151.446 81.7285C150.556 81.708 149.621 81.3373 148.956 80.1723C147.799 78.1476 147.826 75.6296 149.906 73.1865C150.875 72.0482 153.506 72.7834 155.455 71.735C157.426 70.6746 157.989 68.16 159.535 67.8873C162.8 67.3118 165.031 68.4493 165.866 71.1248C166.399 72.8342 165.996 74.0511 165.369 74.8813C164.478 76.062 164.046 77.5411 164.185 79.014C164.338 80.6357 163.835 82.6833 161.065 84.1671Z' fill='%23D7D3CB'/%3E%3Cpath d='M159.516 87.3925C157.748 88.1012 157.105 90.6468 158.079 93.0782C159.054 95.5096 161.277 96.906 163.046 96.1973C164.814 95.4886 165.457 92.943 164.483 90.5116C163.508 88.0802 161.285 86.6838 159.516 87.3925Z' fill='%23D7D3CB'/%3E%3Cpath d='M150.826 84.8355C149.299 85.4476 148.743 87.646 149.584 89.7459C150.426 91.8457 152.346 93.0517 153.874 92.4396C155.401 91.8275 155.956 89.6291 155.115 87.5293C154.273 85.4294 152.353 84.2234 150.826 84.8355Z' fill='%23D7D3CB'/%3E%3Cpath d='M166.205 83.2378C164.622 84.3959 164.629 87.0995 166.221 89.2764C167.814 91.4534 170.388 92.2793 171.971 91.1212C173.555 89.963 173.547 87.2595 171.955 85.0825C170.362 82.9056 167.788 82.0797 166.205 83.2378Z' fill='%23D7D3CB'/%3E%3Cpath d='M168.737 74.4311C167.364 75.4361 167.37 77.7822 168.752 79.6714C170.134 81.5605 172.368 82.2772 173.742 81.2722C175.116 80.2672 175.109 77.9211 173.727 76.0319C172.345 74.1428 170.111 73.426 168.737 74.4311Z' fill='%23D7D3CB'/%3E%3Cpath d='M130.479 61.5719C128.397 59.9533 128.353 57.9084 128.903 56.359C129.403 54.9481 129.418 53.403 128.842 52.0211C128.507 51.2186 128.468 50.2374 129.243 49.1816C130.592 47.3466 132.85 46.3726 135.854 47.2607C137.255 47.6744 137.641 50.3139 139.349 51.6374C141.077 52.9761 143.544 52.4813 144.401 53.7534C146.208 56.4383 146.078 58.881 144.021 60.686C142.706 61.8392 141.461 61.9624 140.472 61.7321C139.064 61.4044 137.573 61.6051 136.314 62.3132C134.927 63.0928 132.901 63.4552 130.479 61.5719Z' fill='%23D7D3CB'/%3E%3Cpath d='M126.986 61.4676C125.652 60.1705 123.126 60.6053 121.342 62.4388C119.559 64.2723 119.194 66.8101 120.527 68.1072C121.861 69.4043 124.387 68.9695 126.171 67.136C127.954 65.3025 128.319 62.7647 126.986 61.4676Z' fill='%23D7D3CB'/%3E%3Cpath d='M125.823 52.6993C124.671 51.5791 122.489 51.9546 120.949 53.538C119.409 55.1215 119.094 57.3133 120.245 58.4335C121.397 59.5538 123.579 59.1782 125.119 57.5948C126.66 56.0113 126.975 53.8196 125.823 52.6993Z' fill='%23D7D3CB'/%3E%3Cpath d='M133.346 65.7893C131.685 64.8355 129.275 65.9138 127.964 68.1978C126.652 70.4818 126.936 73.1066 128.597 74.0604C130.258 75.0143 132.668 73.9359 133.979 71.6519C135.291 69.3679 135.007 66.7432 133.346 65.7893Z' fill='%23D7D3CB'/%3E%3Cpath d='M142.209 64.5596C140.767 63.7318 138.676 64.6676 137.538 66.6497C136.4 68.6317 136.646 70.9095 138.087 71.7372C139.529 72.565 141.62 71.6292 142.758 69.6472C143.896 67.6651 143.65 65.3873 142.209 64.5596Z' fill='%23D7D3CB'/%3E%3C/svg%3E");
+  width: 270px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 100%;
+}
+.hero__content .hero__title .hero__heading span:nth-child(3) {
+  position: relative;
+  right: -25px;
+}
+.hero__content .hero__title .hero__heading span:nth-child(5) {
+  position: relative;
+  right: 355px;
+}
+.hero__content .hero__title .hero__heading span:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml,%3Csvg width='453' height='192' viewBox='0 0 453 192' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M160.953 31.1471C221.16 66.6264 289.838 123.315 364.663 126.429C396.595 127.758 435.954 97.7872 448.725 70.1286C455.431 55.6051 446.733 33.041 434.814 19.87C423.69 7.57792 393.445 2.64519 376.732 2.07502C343.449 0.939634 328.88 12.7744 304.265 31.9331C286.82 45.5113 274.899 63.3549 261.261 79.7338C241.882 103.008 214.424 167.188 188.764 185.5C147.831 214.711 135.264 89 12.2636 122' stroke='%23D7D3CB' stroke-width='2' stroke-linecap='round' stroke-dasharray='6 6'/%3E%3Cpath d='M2.94429 125.108L3.03593 125.082M2.94429 125.108L7.84198 116.321M2.94429 125.108L11.7306 130.005' stroke='%23D7D3CB' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cellipse cx='220.931' cy='142.445' rx='38.5' ry='23.7468' transform='rotate(-156.305 220.931 142.445)' fill='%23EBEAE8'/%3E%3Cpath d='M235.828 155.167C233.448 156.443 231.516 155.634 230.295 154.475C229.182 153.42 227.742 152.764 226.209 152.729C225.319 152.708 224.384 152.337 223.719 151.172C222.562 149.148 222.589 146.63 224.669 144.187C225.639 143.048 228.27 143.783 230.218 142.735C232.19 141.675 232.752 139.16 234.299 138.887C237.563 138.312 239.795 139.449 240.629 142.125C241.162 143.834 240.759 145.051 240.132 145.881C239.241 147.062 238.809 148.541 238.948 150.014C239.101 151.636 238.598 153.683 235.828 155.167Z' fill='%23D7D3CB'/%3E%3Cpath d='M234.28 158.393C232.511 159.101 231.868 161.647 232.842 164.078C233.817 166.51 236.04 167.906 237.809 167.197C239.577 166.489 240.22 163.943 239.246 161.512C238.271 159.08 236.048 157.684 234.28 158.393Z' fill='%23D7D3CB'/%3E%3Cpath d='M225.589 155.836C224.062 156.448 223.506 158.646 224.348 160.746C225.189 162.846 227.11 164.052 228.637 163.44C230.164 162.828 230.72 160.629 229.878 158.529C229.036 156.429 227.116 155.223 225.589 155.836Z' fill='%23D7D3CB'/%3E%3Cpath d='M240.968 154.238C239.385 155.396 239.392 158.1 240.985 160.276C242.577 162.453 245.151 163.279 246.734 162.121C248.318 160.963 248.31 158.259 246.718 156.083C245.126 153.906 242.551 153.08 240.968 154.238Z' fill='%23D7D3CB'/%3E%3Cpath d='M243.501 145.431C242.127 146.436 242.133 148.782 243.515 150.671C244.897 152.561 247.131 153.277 248.505 152.272C249.879 151.267 249.872 148.921 248.491 147.032C247.109 145.143 244.875 144.426 243.501 145.431Z' fill='%23D7D3CB'/%3E%3Cpath d='M205.242 132.572C203.16 130.953 203.116 128.908 203.666 127.359C204.167 125.948 204.181 124.403 203.605 123.021C203.271 122.219 203.231 121.237 204.007 120.182C205.355 118.347 207.613 117.373 210.618 118.261C212.018 118.674 212.405 121.314 214.113 122.637C215.84 123.976 218.307 123.481 219.164 124.753C220.971 127.438 220.841 129.881 218.784 131.686C217.47 132.839 216.224 132.962 215.235 132.732C213.828 132.404 212.336 132.605 211.077 133.313C209.691 134.093 207.664 134.455 205.242 132.572Z' fill='%23D7D3CB'/%3E%3Cpath d='M201.749 132.468C200.416 131.171 197.889 131.605 196.105 133.439C194.322 135.272 193.957 137.81 195.29 139.107C196.624 140.404 199.151 139.969 200.934 138.136C202.718 136.303 203.082 133.765 201.749 132.468Z' fill='%23D7D3CB'/%3E%3Cpath d='M200.586 123.699C199.435 122.579 197.252 122.955 195.712 124.538C194.172 126.121 193.857 128.313 195.008 129.433C196.16 130.554 198.342 130.178 199.882 128.595C201.423 127.011 201.738 124.82 200.586 123.699Z' fill='%23D7D3CB'/%3E%3Cpath d='M208.109 136.789C206.448 135.835 204.038 136.914 202.727 139.198C201.415 141.482 201.699 144.107 203.36 145.06C205.021 146.014 207.431 144.936 208.742 142.652C210.054 140.368 209.77 137.743 208.109 136.789Z' fill='%23D7D3CB'/%3E%3Cpath d='M216.972 135.56C215.531 134.732 213.439 135.668 212.301 137.65C211.163 139.632 211.409 141.91 212.851 142.737C214.292 143.565 216.383 142.629 217.521 140.647C218.66 138.665 218.414 136.387 216.972 135.56Z' fill='%23D7D3CB'/%3E%3C/svg%3E");
+  width: 455px;
+  height: 192px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 75%;
+  bottom: -95%;
+  z-index: -1;
+}
+
+/* Slider Settings */
+.hero-swiper {
+  width: 184px;
+  height: 120px;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  top: 28px;
+  overflow: hidden;
+}
+.hero-swiper .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero-swiper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.hero-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 10px;
+}
+
+.hero__description {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 36px;
+}
+.hero__description .hero__description-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.hero__description .hero__description-text p {
+  max-width: 405px;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  color: #55534E;
+}
+.hero__description .hero__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero__description .hero__social .hero__social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 14px;
+     -moz-column-gap: 14px;
+          column-gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.hero__buttons {
+  margin-top: 80px;
+}
+.hero__buttons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+.hero__buttons ul .hero__button-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  overflow: visible;
+  border-radius: 10px;
+}
+.hero__buttons ul .hero__button-item .hero__button-item__btn-wrapper {
+  position: relative;
+  border-radius: 10px;
+  z-index: 3;
+}
+.hero__buttons ul .hero__button-item .hero__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 140px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  font: bold 40px/48px "NT Somic";
+  color: #1E1E1E;
+}
+.hero__buttons ul .hero__button-item:nth-last-of-type(1) .hero__button {
+  color: #ffffff;
+}
+.hero__buttons ul .hero__button-item:nth-child(1) .hero__button-hover-images {
+  position: absolute;
+  bottom: 75%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(10px);
+      -ms-transform: translateX(-50%) translateY(10px);
+          transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero__buttons ul .hero__button-item:nth-child(1) .hero__button-hover-images img {
+  width: 120px;
+  height: 150px;
+  border-radius: 10px;
+  -webkit-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  position: relative;
+  bottom: -20px;
+  border: 4px solid #EBEAE8;
+}
+.hero__buttons ul .hero__button-item:nth-child(1) .hero__button-hover-images img:nth-child(2) {
+  position: relative;
+  bottom: -10px;
+  right: 20px;
+  -webkit-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+          transform: rotate(16deg);
+  border: 4px solid #EBEAE8;
+}
+.hero__buttons ul .hero__button-item:nth-child(1)::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='27' viewBox='0 0 26 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_809_362)'%3E%3Cpath d='M24.4212 2.28562L1.64126 25.0656M24.4212 2.28562V25.0656M24.4212 2.28562H1.64126' stroke='%231E1E1E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_809_362'%3E%3Crect width='26' height='26' fill='white' transform='translate(0 0.7854)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  width: 26px;
+  height: 26px;
+  bottom: 26px;
+  right: 26px;
+  z-index: 4;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.hero__buttons ul .hero__button-item:nth-child(2) .hero__button-hover-images {
+  position: absolute;
+  bottom: 75%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(10px);
+      -ms-transform: translateX(-50%) translateY(10px);
+          transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero__buttons ul .hero__button-item:nth-child(2) .hero__button-hover-images img {
+  width: 120px;
+  height: 150px;
+  border-radius: 10px;
+  -webkit-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  position: relative;
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  border: 4px solid #EBEAE8;
+  right: -60px;
+  z-index: 4;
+}
+.hero__buttons ul .hero__button-item:nth-child(2) .hero__button-hover-images img:nth-child(2) {
+  -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+          transform: rotate(5deg);
+  border: 4px solid #EBEAE8;
+  bottom: -40px;
+  right: -35px;
+  z-index: 3;
+  top: 15px;
+}
+.hero__buttons ul .hero__button-item:nth-child(2)::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='27' viewBox='0 0 26 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_809_376)'%3E%3Cpath d='M24.4212 2.41623L1.64126 25.1962M24.4212 2.41623V25.1962M24.4212 2.41623H1.64126' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_809_376'%3E%3Crect width='26' height='26' fill='white' transform='translate(0 0.916016)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  width: 26px;
+  height: 26px;
+  bottom: 26px;
+  right: 26px;
+  z-index: 4;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.hero__buttons ul .hero__button-item:hover .hero__button-item__btn-wrapper {
+  outline: 2px solid #1E1E1E;
+}
+.hero__buttons ul .hero__button-item:hover .hero__button-hover-images {
+  -webkit-transform: translateX(-50%) translateY(0);
+      -ms-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

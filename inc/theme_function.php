@@ -215,3 +215,212 @@ add_filter( 'rank_math/frontend/breadcrumb/html', function( $html, $crumbs, $cla
 function is_blog () {
     return ( is_archive() || is_author() || is_category() || is_home() || is_tag()) && 'post' == get_post_type();
 }
+
+
+/**
+* Gets and returns the contents of the SVG file, optionally adding a class.
+*
+* @param string $name The name of the SVG file (without extension).
+* @param string $class An additional CSS class for the SVG (empty by default).
+* @return string The cleaned SVG code, or an empty string if the file is not found.
+*/
+
+function get_svg($name, $class = '', $color = '') {
+    $svg_path = get_template_directory() . "/assets/svg/{$name}.svg";
+
+    if (!file_exists($svg_path)) {
+        return '';
+    }
+
+    $svg = file_get_contents($svg_path);
+    if ($svg === false) {
+        return '';
+    }
+
+    libxml_use_internal_errors(true);
+
+    $dom = new DOMDocument();
+    $dom->loadXML($svg);
+
+    $svgElement = $dom->getElementsByTagName('svg')->item(0);
+    if ($svgElement && !empty($class)) {
+        $svgElement->setAttribute('class', $class);
+    }
+
+    if (!empty($color)) {
+        $xpath = new DOMXPath($dom);
+        $xpath->registerNamespace("svg", "http://www.w3.org/2000/svg");
+    
+        $paths = $xpath->query("//svg:path[@fill='#01021E' or @fill='#02031E']");
+    
+        if ($paths->length === 0) {
+            $paths = $xpath->query("//svg:path[not(@fill)]");
+        }
+    
+        foreach ($paths as $path) {
+            if ($path instanceof DOMElement) {
+                $path->setAttribute('fill', $color);
+            }
+        }
+    }
+
+    return $dom->saveXML();
+}
+
+
+/**
+ * Register a shortcode to display a Swiper slider
+ * based on ACF Gallery field named "slider_images".
+ *
+ * Usage in content/ACF field: [hero_slider]
+ */
+function hero_slider_shortcode() {
+
+    $slider_images = get_field('slider_images');
+    
+    if (empty($slider_images)) {
+        return '';
+    }
+
+    ob_start(); 
+    ?>
+    <div class="swiper-container hero-swiper">
+        <div class="swiper-wrapper">
+            <?php foreach ($slider_images as $slider_image): ?>
+                <div class="swiper-slide">
+                    <img 
+                        src="<?php echo esc_url($slider_image['url']); ?>" 
+                        alt="<?php echo esc_attr($slider_image['alt']); ?>"
+                    >
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('hero_slider', 'hero_slider_shortcode');
+
+
+/**
+ * Generates a country selector list complete with flags for use within a Contact Form 7 form.
+ *
+ * This shortcode function provides an interactive list of countries, displays a default 
+ * selected country (Ukraine) with a flag, and includes a hidden input field for Contact Form 7 submission. 
+ * When a user clicks on a different country, both the visible label and the hidden input value 
+ * update accordingly. This allows seamless integration with your CF7 forms and a more engaging user interface.
+ *
+ * @param array $atts  Optional shortcode attributes (currently unused).
+ *
+ * @return string      The HTML markup displaying a default selected country with its flag,
+ *                     a list of available countries, and a hidden input for form submission.
+ */
+function custom_country_list_shortcode($atts) {
+    $countries = [
+        "Ukraine" => "ua",
+        "USA" => "us",
+        "Germany" => "de",
+        "France" => "fr",
+        "United Kingdom" => "gb",
+        "Canada" => "ca",
+        "Australia" => "au",
+        "Japan" => "jp",
+        "China" => "cn",
+        "Brazil" => "br"
+    ];
+
+    // Define default country
+    $defaultCountry = "Ukraine";
+    $defaultCode = $countries[$defaultCountry];
+    $defaultFlagUrl = "https://flagcdn.com/w40/$defaultCode.png";
+
+    $output = '<div class="custom-country-list">';
+    
+    // Display default country with its flag
+    $output .= '<p class="selected-country">
+                    <img src="' . esc_url($defaultFlagUrl) . '" 
+                         alt="' . esc_attr($defaultCountry) . '" 
+                         class="flag-icon"> 
+                    ' . esc_html($defaultCountry) . '
+                </p>';
+    
+    $output .= '<ul>';
+
+    foreach ($countries as $country => $code) {
+        $flagUrl = "https://flagcdn.com/w40/$code.png"; 
+        $output .= '<li data-country="' . esc_attr($country) . '">
+                        <img src="' . esc_url($flagUrl) . '" 
+                             alt="' . esc_attr($country) . '" 
+                             class="flag-icon"> 
+                        ' . esc_html($country) . '
+                    </li>';
+    }
+
+    $output .= '</ul>';
+
+    // Hidden input for CF7 submission, defaulting to Ukraine
+    $output .= '<input type="hidden" name="country" 
+                       id="selected-country" 
+                       class="wpcf7-form-control wpcf7-hidden" 
+                       value="' . esc_attr($defaultCountry) . '">';
+
+    $output .= '</div>';
+
+    return $output;
+}
+
+add_shortcode('country_list', 'custom_country_list_shortcode');
+
+
+
+
+// Фильтр для обработки шорткодов внутри CF7
+add_filter('wpcf7_form_elements', function ($content) {
+    return do_shortcode($content);
+});
+
+
+/**
+ * Filters out profanity from specified Contact Form 7 text fields by querying an external API.
+ * This helps ensure that certain fields (e.g., "full-name" or "project-description") remain
+ * free of inappropriate or offensive language. If the API detects any unwanted words,
+ * the form submission is invalidated, prompting the user to correct the input before proceeding.
+ *
+ * @param WPCF7_Validation $result The current validation result object used by Contact Form 7.
+ * @param WPCF7_FormTag    $tag    The form tag object for the field being validated.
+ *
+ * @return WPCF7_Validation         The updated validation result object, indicating success or error.
+ */
+function cf7_profanity_filter( $result, $tag ) {
+
+    $fields_to_check = array(
+        'user-name',
+    );
+
+    foreach ($fields_to_check as $field) {
+        if (isset($_POST[$field])) {
+            $text = sanitize_text_field($_POST[$field]);
+
+            // Send request to the API with parameter fill_char=*
+            $api_url = 'https://www.purgomalum.com/service/json?fill_char=*&text=' . urlencode($text);
+            $response = wp_remote_get($api_url);
+
+            if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+                $body = wp_remote_retrieve_body($response);
+                $cleaned_text = json_decode($body, true)['result'];
+
+                // If the cleaned text differs, it means the API found inappropriate words
+                if ($cleaned_text !== $text) {
+                    $result->invalidate($field, "This field contains inappropriate words.");
+                }
+            }
+        }
+    }
+
+    return $result;
+}
+
+add_filter('wpcf7_validate_text', 'cf7_profanity_filter', 10, 2);
+add_filter('wpcf7_validate_text*', 'cf7_profanity_filter', 10, 2);
+
+  
