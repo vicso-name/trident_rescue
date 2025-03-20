@@ -1,0 +1,251 @@
+.section-items {
+  position: relative;
+  padding-bottom: 0;
+}
+@media (max-width: 768px) {
+  .section-items {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .section-items {
+    padding-top: 30px;
+  }
+}
+.section-items::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-image: url("data:image/svg+xml,%3Csvg width='680' height='973' viewBox='0 0 680 973' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M162.329 1C162.329 1 592.463 57.1318 669.768 267.549C778.748 564.185 -115.625 530.44 13.8471 818.684C53.8131 907.661 224.321 972 224.321 972' stroke='%23D7D3CB' stroke-width='2' stroke-linecap='round' stroke-dasharray='6 6'/%3E%3Ccircle cx='37.6314' cy='853.836' r='22.147' transform='rotate(153.904 37.6314 853.836)' fill='%23EBEAE8'/%3E%3Cpath d='M40.0939 852.35C37.5374 847.072 37.6276 841.189 39.8315 836.205C36.399 835.68 32.7777 836.15 29.4162 837.778C25.7956 839.532 23.0401 842.354 21.3418 845.68C26.3357 847.167 30.714 850.662 33.1585 855.709C35.6029 860.757 35.6311 866.359 33.7005 871.199C37.3633 871.929 41.2854 871.517 44.9067 869.763C48.2681 868.136 50.8828 865.586 52.5991 862.567C47.3211 861.205 42.6497 857.628 40.0939 852.35Z' fill='%23D7D3CB'/%3E%3Cpath d='M42.6781 836.884C40.5894 841.222 40.4211 846.438 42.6781 851.097C44.9351 855.758 49.131 858.859 53.8299 859.91C55.4399 855.539 55.3433 850.547 53.1528 846.024C50.9624 841.503 47.1057 838.332 42.6781 836.884Z' fill='%23D7D3CB'/%3E%3Cpath d='M30.9207 870.402C32.6728 866.226 32.6978 861.348 30.5733 856.96C28.4488 852.574 24.6054 849.567 20.2418 848.353C18.8987 852.546 19.097 857.241 21.1672 861.515C23.2386 865.79 26.7978 868.856 30.9207 870.402Z' fill='%23D7D3CB'/%3E%3Cellipse cx='597.834' cy='167.723' rx='38.5' ry='23.7468' transform='rotate(130.85 597.834 167.723)' fill='%23EBEAE8'/%3E%3Cpath d='M614.384 157.24C614.9 159.891 613.557 161.498 612.09 162.324C610.754 163.075 609.702 164.258 609.216 165.712C608.934 166.557 608.304 167.34 606.995 167.633C604.719 168.141 602.321 167.373 600.6 164.664C599.798 163.402 601.277 161.105 600.85 158.934C600.418 156.738 598.181 155.459 598.377 153.9C598.79 150.612 600.535 148.814 603.337 148.807C605.128 148.802 606.172 149.545 606.78 150.389C607.646 151.589 608.931 152.438 610.38 152.74C611.975 153.071 613.783 154.156 614.384 157.24Z' fill='%23D7D3CB'/%3E%3Cpath d='M617.01 159.671C617.165 161.57 619.408 162.936 622.018 162.722C624.629 162.508 626.619 160.795 626.464 158.896C626.308 156.998 624.065 155.632 621.455 155.846C618.844 156.06 616.854 157.773 617.01 159.671Z' fill='%23D7D3CB'/%3E%3Cpath d='M612.002 167.221C612.137 168.861 614.074 170.04 616.328 169.856C618.583 169.671 620.302 168.192 620.167 166.552C620.033 164.912 618.096 163.733 615.841 163.917C613.587 164.102 611.868 165.581 612.002 167.221Z' fill='%23D7D3CB'/%3E%3Cpath d='M615.012 152.055C615.651 153.909 618.237 154.7 620.787 153.82C623.336 152.941 624.885 150.725 624.245 148.87C623.605 147.016 621.02 146.226 618.47 147.105C615.92 147.984 614.372 150.201 615.012 152.055Z' fill='%23D7D3CB'/%3E%3Cpath d='M607.344 147.038C607.899 148.647 610.143 149.333 612.355 148.569C614.568 147.806 615.912 145.883 615.357 144.274C614.802 142.665 612.558 141.979 610.345 142.742C608.132 143.505 606.789 145.428 607.344 147.038Z' fill='%23D7D3CB'/%3E%3Cpath d='M583.772 179.802C581.612 181.314 579.645 180.752 578.326 179.77C577.126 178.876 575.654 178.406 574.163 178.549C573.298 178.632 572.349 178.38 571.569 177.328C570.213 175.498 569.948 173.054 571.683 170.444C572.491 169.228 575.127 169.637 576.896 168.396C578.685 167.14 578.939 164.636 580.408 164.193C583.506 163.258 585.802 164.103 586.92 166.601C587.634 168.197 587.384 169.423 586.872 170.301C586.144 171.549 585.896 173.033 586.201 174.445C586.537 176 586.286 178.043 583.772 179.802Z' fill='%23D7D3CB'/%3E%3Cpath d='M582.643 183.108C581.01 184 580.68 186.543 581.906 188.788C583.132 191.032 585.449 192.13 587.082 191.238C588.715 190.347 589.044 187.804 587.818 185.559C586.593 183.314 584.275 182.217 582.643 183.108Z' fill='%23D7D3CB'/%3E%3Cpath d='M573.922 181.633C572.511 182.403 572.227 184.599 573.285 186.538C574.344 188.477 576.345 189.424 577.755 188.654C579.166 187.884 579.45 185.689 578.392 183.75C577.333 181.811 575.332 180.863 573.922 181.633Z' fill='%23D7D3CB'/%3E%3Cpath d='M588.648 178.306C587.246 179.612 587.566 182.232 589.362 184.159C591.157 186.086 593.749 186.589 595.15 185.283C596.551 183.978 596.232 181.357 594.436 179.43C592.641 177.503 590.049 177 588.648 178.306Z' fill='%23D7D3CB'/%3E%3Cpath d='M590.087 169.475C588.871 170.608 589.148 172.882 590.706 174.554C592.265 176.226 594.514 176.663 595.73 175.53C596.946 174.396 596.668 172.122 595.11 170.45C593.552 168.778 591.303 168.341 590.087 169.475Z' fill='%23D7D3CB'/%3E%3C/svg%3E%0A");
+  width: 641px;
+  height: 110%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 768px) {
+  .section-items::before {
+    width: 354px;
+    height: 505px;
+    background-image: url("data:image/svg+xml,%3Csvg width='356' height='507' viewBox='0 0 356 507' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M128.049 1C142.234 8.22526 228.891 50.9855 243.454 57.236C269.764 68.5282 304.058 77.098 332.508 71.865C341.831 70.1502 351.213 64.139 354.067 53.789C357.283 42.1284 351.974 31.3594 341.421 27.978C319.406 20.9241 308.736 34.5851 302.722 56.059C296.33 78.8829 297.424 112.223 306.302 134.08C310.727 144.973 319.02 154.765 324.662 165.02C332.062 178.473 336.661 191.234 339.745 206.553C345.372 234.496 337.923 259.308 324.662 282.724C318.101 294.309 308.239 304.118 294.418 314C247.392 347.622 201.5 291.553 146.509 308C50.0811 336.841 1 506 1 506' stroke='%23D7D3CB' stroke-width='2' stroke-miterlimit='3.8637' stroke-linecap='round' stroke-dasharray='6 6'/%3E%3Ccircle cx='318.131' cy='156.131' r='15.7939' transform='rotate(153.904 318.131 156.131)' fill='%23EBEAE8'/%3E%3Cpath d='M319.889 155.071C318.066 151.307 318.131 147.112 319.702 143.557C317.255 143.183 314.672 143.518 312.275 144.68C309.693 145.93 307.728 147.942 306.517 150.315C310.078 151.375 313.2 153.867 314.944 157.466C316.687 161.067 316.707 165.061 315.33 168.513C317.942 169.034 320.739 168.74 323.322 167.489C325.719 166.329 327.584 164.511 328.807 162.357C325.043 161.386 321.712 158.835 319.889 155.071Z' fill='%23D7D3CB'/%3E%3Cpath d='M321.732 144.042C320.242 147.136 320.122 150.855 321.732 154.178C323.341 157.502 326.334 159.713 329.685 160.462C330.833 157.346 330.764 153.786 329.202 150.56C327.64 147.335 324.889 145.074 321.732 144.042Z' fill='%23D7D3CB'/%3E%3Cpath d='M313.347 167.945C314.597 164.967 314.615 161.488 313.1 158.359C311.584 155.231 308.844 153.087 305.732 152.221C304.774 155.211 304.915 158.559 306.392 161.607C307.869 164.656 310.407 166.843 313.347 167.945Z' fill='%23D7D3CB'/%3E%3C/svg%3E");
+  }
+}
+.section-items .slider__items-title {
+  font-family: "NT Somic";
+  font-weight: bold;
+  text-align: left;
+  font-size: 62px;
+  line-height: 68.2px;
+  margin-bottom: -100px;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .section-items .slider__items-title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+}
+.section-items .carousel-wrapper {
+  width: 100vw;
+  min-height: 850px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+.section-items .carousel-container {
+  height: 635px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10vw;
+  gap: 4vw;
+  will-change: transform;
+  -webkit-transition: margin-right 0.3s ease-out;
+  transition: margin-right 0.3s ease-out;
+}
+.section-items .carousel-item {
+  height: 100% !important;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35vw;
+          flex: 0 0 35vw;
+  border-radius: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+  margin-right: 4vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.section-items .carousel-item .carousel-item__image-wrapper {
+  width: 406px;
+  height: 500px;
+  border-radius: 20px;
+  -webkit-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform-origin: bottom center;
+      -ms-transform-origin: bottom center;
+          transform-origin: bottom center;
+  will-change: transform;
+}
+.section-items .carousel-item .carousel-item__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 20px;
+}
+.section-items .carousel-item .carousel-item__image-wrapper .carousel-item__number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #FFFFFF;
+  width: 81px;
+  height: 81px;
+  border-radius: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 21.62px;
+  line-height: 81px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #1E1E1E;
+}
+.section-items .carousel-item .description {
+  opacity: 0;
+  width: 300px;
+}
+.section-items .carousel-item .description .description-title {
+  font-family: "NT Somic";
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 36.48px;
+  color: #1E1E1E;
+  margin-bottom: 16px;
+}
+.section-items .carousel-item .description .description-content {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  color: #55534E;
+}
+.section-items .carousel-item:nth-child(1) .carousel-item__image-wrapper {
+  width: 300px;
+  height: 370px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.section-items .carousel-item:nth-child(1) .description {
+  opacity: 1;
+}
+
+.mobile-slider-section {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .mobile-slider-section {
+    display: block;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  .mobile-slider-section::before {
+    width: 354px;
+    height: 505px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    background-image: url("data:image/svg+xml,%3Csvg width='356' height='507' viewBox='0 0 356 507' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M128.049 1C142.234 8.22526 228.891 50.9855 243.454 57.236C269.764 68.5282 304.058 77.098 332.508 71.865C341.831 70.1502 351.213 64.139 354.067 53.789C357.283 42.1284 351.974 31.3594 341.421 27.978C319.406 20.9241 308.736 34.5851 302.722 56.059C296.33 78.8829 297.424 112.223 306.302 134.08C310.727 144.973 319.02 154.765 324.662 165.02C332.062 178.473 336.661 191.234 339.745 206.553C345.372 234.496 337.923 259.308 324.662 282.724C318.101 294.309 308.239 304.118 294.418 314C247.392 347.622 201.5 291.553 146.509 308C50.0811 336.841 1 506 1 506' stroke='%23D7D3CB' stroke-width='2' stroke-miterlimit='3.8637' stroke-linecap='round' stroke-dasharray='6 6'/%3E%3Ccircle cx='318.131' cy='156.131' r='15.7939' transform='rotate(153.904 318.131 156.131)' fill='%23EBEAE8'/%3E%3Cpath d='M319.889 155.071C318.066 151.307 318.131 147.112 319.702 143.557C317.255 143.183 314.672 143.518 312.275 144.68C309.693 145.93 307.728 147.942 306.517 150.315C310.078 151.375 313.2 153.867 314.944 157.466C316.687 161.067 316.707 165.061 315.33 168.513C317.942 169.034 320.739 168.74 323.322 167.489C325.719 166.329 327.584 164.511 328.807 162.357C325.043 161.386 321.712 158.835 319.889 155.071Z' fill='%23D7D3CB'/%3E%3Cpath d='M321.732 144.042C320.242 147.136 320.122 150.855 321.732 154.178C323.341 157.502 326.334 159.713 329.685 160.462C330.833 157.346 330.764 153.786 329.202 150.56C327.64 147.335 324.889 145.074 321.732 144.042Z' fill='%23D7D3CB'/%3E%3Cpath d='M313.347 167.945C314.597 164.967 314.615 161.488 313.1 158.359C311.584 155.231 308.844 153.087 305.732 152.221C304.774 155.211 304.915 158.559 306.392 161.607C307.869 164.656 310.407 166.843 313.347 167.945Z' fill='%23D7D3CB'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+  height: 340px;
+}
+@media (max-width: 576px) {
+  .mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-image {
+    height: 500px;
+  }
+}
+@media (max-width: 440px) {
+  .mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-image {
+    height: 420px;
+  }
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-image .carousel-slider-number {
+  background-color: #fff;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-description {
+  width: 250px;
+  margin-top: 20px;
+}
+@media (max-width: 576px) {
+  .mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-description {
+    width: 100%;
+  }
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-description h3 {
+  font-family: "NT Somic";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28.8px;
+  color: #1E1E1E;
+  margin-bottom: 10px;
+}
+.mobile-slider-section .carouselSwiper .swiper-wrapper .swiper-slide .carousel-slider-description p {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #55534E;
+}

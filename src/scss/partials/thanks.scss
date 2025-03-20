@@ -1,0 +1,162 @@
+.thank-you-container{
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @media(max-width:580px){
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 60px;
+    }
+    .thankyou-title{
+        font-family: 'NT Somic', sans-serif;
+        font-weight: bold;
+        font-size: 110px;
+        line-height: 110px;
+        color: #1E1E1E;
+        @media(max-width:1100px){
+            font-size: 85px;
+            line-height: 85px;
+        }
+        @media(max-width:992px){
+            text-align: center;
+        }
+        @media(max-width:580px){
+            font-size: 54px;
+            line-height: 48px;
+            text-align: left;
+        }
+        span{
+            &:nth-child(3){
+                margin-left: 123px;
+                @media(max-width:768px){
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .thankyou-description__wrapper{
+        margin-top: 30px;
+        width: 100%;
+        max-width: 427px;
+        margin-left: 114px;
+        @media(max-width:580px){
+            margin-left: 0;
+        }
+        .thankyou-description{
+            font-family: 'Inter';
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25.2px;
+            color: rgba(85, 83, 78, 1);
+            margin-bottom: 30px;
+            @media(max-width:580px){
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+        .return_button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 62px;
+            line-height: 62px;
+            border-radius: 60px;
+            width: 200px;
+            background-color: #F9CB6C;
+            transition: all .5s ease;
+            position: relative;
+            @media (max-width:768px) {
+                width: 182px;
+                height: 60px;
+                line-height: 60px;
+            }
+            &:hover{
+                background-color: #f7ba3b;
+            }
+            span{
+                position: relative;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 16px;
+                text-align: center;
+                color: #1E1E1E;
+                margin-left: -15px;
+                &::before{
+                    content: "";
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='20' viewBox='0 0 24 20' fill='none'%3E%3Cpath d='M16.2426 6.75729L7.75736 15.2426M16.2426 6.75729V15.2426M16.2426 6.75729H7.75736' stroke='%231E1E1E' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    width: 24px;
+                    height: 20px;
+                    position: absolute;
+                    right: -30px;
+                    bottom: 21px;
+                }
+            }
+        }
+        .follow-us{
+            margin-top: 30px;
+            .follow-us__title{
+                font-family: 'Inter',sans-serif;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22.4px;
+                margin-bottom: 8px;
+            }
+            .follow-us-list{
+                display: flex;
+                list-style-type: none;
+                gap:14px;
+                padding: 0;
+                margin: 0;
+                .follow-us-list__item{
+                    .follow-us-link{
+                        .follow-us-icon{
+                            transition: all .5s ease;
+                            &:hover{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .thanks_image-wrapper{
+        max-width: 1368px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        @media(max-width:580px){
+            position: static;
+            position: static;
+            bottom: unset;
+            right: unset;
+            left: unset;
+            transform: unset;
+            text-align: center;
+        }
+    }
+    .thanks_image{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 530px;
+        height: 440px;
+        @media(max-width:580px){
+            position: static;
+            bottom: unset;
+            right: unset;
+        }
+        @media(max-width:1100px){
+            width: 440px;
+            height: auto;
+        }
+        @media(max-width:768px){
+            width: 345px;
+        }
+    }
+
+}

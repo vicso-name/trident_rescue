@@ -8,12 +8,23 @@
 
     <div class="container">
         <div class="hero__content">
+
             <div class="hero__title">
                 <?php
                 $main_title = get_field('main_title');
                 if (!empty($main_title)) : ?>
-                    <h1 class="hero__heading">
+                    <h1  class="hero__heading">
                         <?php echo do_shortcode( $main_title ); ?>
+                    </h1>
+                <?php endif; ?>
+            </div>
+
+            <div class="hero__title-mobile">
+                <?php
+                $main_title_mobile = get_field('main_title_mobile');
+                if (!empty($main_title_mobile)) : ?>
+                    <h1 class="hero__heading">
+                        <?php echo do_shortcode( $main_title_mobile ); ?>
                     </h1>
                 <?php endif; ?>
             </div>

@@ -284,22 +284,91 @@ function hero_slider_shortcode() {
 
     ob_start(); 
     ?>
-    <div class="swiper-container hero-swiper">
-        <div class="swiper-wrapper">
-            <?php foreach ($slider_images as $slider_image): ?>
-                <div class="swiper-slide">
-                    <img 
-                        src="<?php echo esc_url($slider_image['url']); ?>" 
-                        alt="<?php echo esc_attr($slider_image['alt']); ?>"
-                    >
+        <div class="hero-swiper__wrapper">
+            <div class="swiper-container hero-swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($slider_images as $slider_image): ?>
+                        <div class="swiper-slide">
+                            <img 
+                                src="<?php echo esc_url($slider_image['url']); ?>" 
+                                alt="<?php echo esc_attr($slider_image['alt']); ?>"
+                            >
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
-    </div>
     <?php
     return ob_get_clean();
 }
 add_shortcode('hero_slider', 'hero_slider_shortcode');
+
+/**
+ * Register a shortcode to display up to 3 static images 
+ * based on the ACF Gallery field named "slider_images".
+ *
+ * Usage in content/ACF field: [static_images]
+ */
+function static_images_shortcode() {
+
+    $images = get_field('static_images');
+
+    if (empty($images)) {
+        return '';
+    }
+
+    // Ограничиваем количество изображений (до 3)
+    $images = array_slice($images, 0, 3);
+
+    ob_start(); 
+    ?>
+    <div class="static-images">
+        <ul class="static-images-list">
+            <?php foreach ($images as $image): ?>
+                <li>
+                    <img 
+                        src="<?php echo esc_url($image['url']); ?>" 
+                        alt="<?php echo esc_attr($image['alt']); ?>"
+                    >
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('static_images', 'static_images_shortcode');
+
+
+/**
+ * Register a shortcode to display an image 
+ * based on the ACF field named "title_image" inside the group "decoration_title".
+ *
+ * Usage in content/ACF field: [title_image]
+ */
+function title_image_shortcode() {
+    $decoration_group = get_field('decoration_title');
+
+    if (empty($decoration_group) || empty($decoration_group['title_image'])) {
+        return '';
+    }
+    $image = $decoration_group['title_image'];
+    ob_start(); 
+    ?>
+        <div class="title_image">
+            <img
+                class="title_image-item" 
+                src="<?php echo esc_url($image['url']); ?>" 
+                alt="<?php echo esc_attr($image['alt']); ?>"
+            >
+        </div>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('title_image', 'title_image_shortcode');
+
 
 
 /**
@@ -395,6 +464,7 @@ function cf7_profanity_filter( $result, $tag ) {
 
     $fields_to_check = array(
         'user-name',
+        'bottom-user-name',
     );
 
     foreach ($fields_to_check as $field) {
@@ -423,4 +493,3 @@ function cf7_profanity_filter( $result, $tag ) {
 add_filter('wpcf7_validate_text', 'cf7_profanity_filter', 10, 2);
 add_filter('wpcf7_validate_text*', 'cf7_profanity_filter', 10, 2);
 
-  

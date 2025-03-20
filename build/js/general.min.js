@@ -1,5 +1,44 @@
 window.addEventListener("DOMContentLoaded", () => {
 
+    //Burger Switcher
+    function hamburger(){
+
+        const hamburger = document.querySelector('.humburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const siteHeaderConten = document.querySelector('.site-header-conten');
+        const siteHeader = document.querySelector('.site-header');
+      
+        if (!hamburger) {
+          return;
+        }
+        if (!mobileMenu) {
+          return;
+        }
+        if (!siteHeaderConten) {
+            return;
+        }
+        if(!siteHeader){
+            return;
+        }
+      
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          siteHeaderConten.classList.toggle('active');
+          if (!siteHeader.classList.contains('active')) {
+            setTimeout(() => {
+              siteHeader.classList.add('active');
+            }, 800);
+          } else {
+            siteHeader.classList.remove('active');
+          }
+        });
+
+    }
+
+    hamburger()
+    
+
     // Heder contact
     document.querySelectorAll('.menu-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function() {
@@ -96,27 +135,37 @@ window.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
     let popup = document.getElementById("contact-popup");
     let openBtn = document.getElementById("open-popup");
+    let mobileContactBtn = document.getElementById("mobile-contact");
     let closeBtn = document.querySelector(".close-popup");
+    let popupOverlay = document.querySelector(".popup-overlay");
 
-    if (popup) {
-        // Открытие попапа
-        openBtn.addEventListener("click", function () {
+    if (popup && popupOverlay) {
+        function showPopup() {
             popup.classList.add("show");
-        });
+            popupOverlay.classList.add("show");
+        }
 
-        // Закрытие попапа
-        closeBtn.addEventListener("click", function () {
+        function hidePopup() {
             popup.classList.remove("show");
-        });
+            popupOverlay.classList.remove("show");
+        }
 
-        // Закрытие при клике вне попапа
-        window.addEventListener("click", function (e) {
-            if (e.target === popup) {
-                popup.classList.remove("show");
-            }
-        });
+        if (openBtn) {
+            openBtn.addEventListener("click", showPopup);
+        }
+
+        if (mobileContactBtn) {
+            mobileContactBtn.addEventListener("click", showPopup);
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", hidePopup);
+        }
+
+        popupOverlay.addEventListener("click", hidePopup);
     }
 });
+
 
 
 
@@ -166,21 +215,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/**
- * Enhances the usability and interactivity of Contact Form 7 forms with dynamic label placeholders, 
- * acceptance policy checks, and user-friendly notifications upon form submission or validation errors.
- * 
- * Key Features:
- * 1. Label Activation: Listens for focus and blur events on input and textarea fields, toggling
- *    the label's "active" class to create an animated placeholder effect.
- * 2. Acceptance Checkbox: Ensures a user cannot submit the form without acknowledging the policy.
- *    If unchecked, the form displays an error message instead of submitting.
- * 3. Success and Error Messages: Displays a brief, styled message at the bottom of the form 
- *    when an email is successfully sent or when an error (invalid fields, spam detection, 
- *    mail failure) occurs, enhancing overall user feedback.
- */
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Активация label при фокусе/блюре для всех input и textarea
     document.querySelectorAll('input, textarea').forEach(element => {
         const formRow = element.closest('.contact-form__row, .sidebar-contact-form__row');
         if (!formRow) return;
@@ -203,35 +240,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Обработка чекбокса политики принятия (если он присутствует)
     document.querySelectorAll("form").forEach(form => {
         const submitButton = form.querySelector(".wpcf7-submit");
         const acceptanceCheckbox = form.querySelector("input[name='acceptance-policy']");
         const acceptanceError = form.querySelector(".contact-form__error-message");
 
-        if (!acceptanceCheckbox || !submitButton) return;
+        if (!submitButton) return; // если нет кнопки отправки, пропускаем
 
-        submitButton.removeAttribute("disabled");
+        if (acceptanceCheckbox) {
+            submitButton.removeAttribute("disabled");
 
-        acceptanceCheckbox.addEventListener("change", function () {
-            if (acceptanceCheckbox.checked) {
-                acceptanceError.style.display = "none";
-            }
-        });
+            acceptanceCheckbox.addEventListener("change", function () {
+                if (acceptanceCheckbox.checked) {
+                    acceptanceError.style.display = "none";
+                }
+            });
 
-        submitButton.addEventListener("click", function (event) {
-            if (!acceptanceCheckbox.checked) {
-                event.preventDefault();
-                acceptanceError.style.display = "block";
-            }
-        });
+            submitButton.addEventListener("click", function (event) {
+                if (!acceptanceCheckbox.checked) {
+                    event.preventDefault();
+                    acceptanceError.style.display = "block";
+                }
+            });
+        }
     });
 
+    // Обработка события успешной отправки формы
     document.addEventListener('wpcf7mailsent', function (event) {
         let form = event.target.closest("form");
         if (!form) return;
 
+        // Ищем сообщение в зависимости от формы: может быть как в попапе, так и в футере
         let messageBox = form.querySelector('.contact-form__message, .sidebar-contact-form__message');
-        let messageText = form.querySelector('#formMessageText, #sidebarFormMessageText');
+        let messageText = form.querySelector('#formMessageText, #sidebarFormMessageText, #bottomFormMessageText');
 
         if (messageBox && messageText) {
             messageBox.style.display = "block";
@@ -240,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
             messageBox.style.right = "0";
             messageBox.style.left = "0";
             messageBox.style.textAlign = "center";
-            messageBox.style.backgroundColor = "rgb(8 190 178)";
+            messageBox.style.backgroundColor = "rgb(8, 190, 178)";
             messageBox.style.color = "#ffffff";
             messageBox.style.padding = "10px";
             messageBox.style.borderRadius = "5px";
@@ -252,6 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Обработка событий ошибки (невалидные данные, спам, ошибка отправки)
     document.addEventListener('wpcf7invalid', showErrorMessage);
     document.addEventListener('wpcf7spam', showErrorMessage);
     document.addEventListener('wpcf7mailfailed', showErrorMessage);
@@ -261,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!form) return;
 
         let messageBox = form.querySelector('.contact-form__message, .sidebar-contact-form__message');
-        let messageText = form.querySelector('#formMessageText, #sidebarFormMessageText');
+        let messageText = form.querySelector('#formMessageText, #sidebarFormMessageText, #bottomFormMessageText');
 
         if (messageBox && messageText) {
             messageBox.style.display = "flex";
@@ -269,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
             messageBox.style.right = "0";
             messageBox.style.left = "0";
             messageBox.style.textAlign = "center";
-            messageBox.style.backgroundColor = "rgb(157 64 173)";
+            messageBox.style.backgroundColor = "rgb(157, 64, 173)";
             messageBox.style.color = "#ffffff";
             messageBox.style.borderRadius = "5px";
             messageText.innerHTML = "There was an error submitting the form. <br> Please check all fields and try again.";
